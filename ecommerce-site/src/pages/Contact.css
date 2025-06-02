@@ -1,0 +1,213 @@
+/* General container styling */
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto 60px auto;
+  background: #fffefb;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #3b2f2f;
+  margin-top: 100px;
+}
+
+/* Headings */
+.contact-container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #3e2f1c;
+  letter-spacing: 1.1px;
+  text-align: center;
+}
+
+.contact-container p {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #5a4b3b;
+  line-height: 1.5;
+}
+
+/* Form styles */
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #5a4b3b;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border: 2px solid #d7ccc8;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4a3c31;
+  background-color: #fffefb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #7b5e2e;
+  outline: none;
+  box-shadow: 0 0 6px rgba(123, 94, 46, 0.5);
+}
+
+/* Placeholder styling */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a8947f;
+  font-style: italic;
+}
+
+/* Textarea resize */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button */
+.btn-submit {
+  width: 100%;
+  background-color: #7b5e2e;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  color: #fff9f0;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  box-shadow: 0 6px 12px rgba(123, 94, 46, 0.7);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #a0783f;
+  transform: translateY(-2px);
+}
+
+/* Required field asterisk */
+.required {
+  color: #d1495b;
+  margin-left: 2px;
+  font-weight: 700;
+}
+
+/* Error message styling */
+.error-message {
+  color: #d1495b;
+  margin-top: -12px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Status message */
+.status-message {
+  margin-top: 20px;
+  font-size: 1.05rem;
+  text-align: center;
+  color: #5a4b3b;
+  font-style: italic;
+}
+
+/* Contact info box */
+.contact-info {
+  margin-top: 40px;
+  background-color: #f7f3ea;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 8px rgba(123, 94, 46, 0.1);
+  color: #6a5836;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Modal overlay background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(62, 47, 28, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal-content {
+  background-color: #fffefb;
+  padding: 35px 45px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22);
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #5a4b3b;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.modal-content h2 {
+  margin-bottom: 22px;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Modal close button */
+.btn-close-modal {
+  background-color: #7b5e2e;
+  color: #fff9f0;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  box-shadow: 0 6px 16px rgba(123, 94, 46, 0.8);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-close-modal:hover {
+  background-color: #a0783f;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .contact-container {
+    padding: 25px 25px;
+    margin: 25px auto 50px;
+  }
+
+  .modal-content {
+    padding: 25px 30px;
+  }
+}

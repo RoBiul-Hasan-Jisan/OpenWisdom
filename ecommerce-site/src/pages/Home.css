@@ -1,0 +1,567 @@
+
+/* Section 1 styles */
+.sectionStyle1 {
+  position: relative;
+  background-color: #9faeaf;
+  padding: 4rem 2rem 6rem;
+  text-align: center;
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0; /* start hidden for fade-in */
+  height: 70vh;   /* 70% of viewport height */
+  width: 100vw;   /* 100% of viewport width */
+}
+/* Fade in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.firstLineStyle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  margin-top: 150px;   /* added top margin */
+  color: #00796b;
+  animation: pulseColorScale 4s ease-in-out infinite;
+}
+
+.secondLineStyle {
+  font-size: 1.75rem;
+  margin: 0.5rem 0 2rem;
+  color: #004d40;
+  animation: pulseColorScale 4s ease-in-out infinite 1s;
+}
+
+/* Pulse scale and color animation for headings */
+@keyframes pulseColorScale {
+  0%, 100% {
+    color: #00796b;
+    transform: scale(1);
+  }
+  50% {
+    color: #004d40;
+    transform: scale(1.05);
+  }
+}
+
+.inputStyle {
+  padding: 0.7rem 1rem;
+  width: 250px;
+  border-radius: 30px 0 0 30px;
+  border: 2px solid #00796b;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputStyle:focus {
+  border-color: #004d40;
+  box-shadow: 0 0 5px #004d40;
+}
+
+.buttonStyle {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background-color: #00796b;
+  color: white;
+  border-radius: 0 30px 30px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonStyle:hover {
+  background-color: #004d40;
+  transform: scale(1.05);
+}
+
+/* Wave animation *
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+.bottomWave {
+  animation: waveMove 6s linear infinite alternate;
+}
+*/
+
+
+.bottomWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 0;
+  pointer-events: none;
+}
+.bottomWave {
+  animation: waveMove 6s linear infinite alternate;
+}
+
+.searchForm {
+  position: relative;
+  z-index: 10;
+}
+
+.bottomWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  animation: waveMove 6s linear infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* === Shared Section Containers (2–9) === */
+.containerStyle,
+.containerStyle3 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.containerStyle3 {
+  flex-direction: row;
+}
+
+.containerStyle.flipped {
+  flex-direction: row-reverse;
+}
+
+/* === Text Blocks === */
+.textBlockStyle,
+.textBlockStyle3 {
+  flex: 1;
+  transition: transform 0.4s ease;
+}
+
+.headingStyle,
+.headingStyle3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #004d40;
+  font-weight: 700;
+}
+
+.quoteStyle,
+.quoteStyle3 {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === Image Styling & Hover Effects === */
+.imageStyle {
+  width: 320px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  cursor: pointer;
+}
+
+.hover-img:hover {
+  transform: scale(1.12) rotate(4deg) translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  filter: brightness(1.15) saturate(1.3);
+}
+
+/* Slide text on image hover (only if next sibling) */
+.containerStyle:hover .hover-img + .textBlockStyle,
+.containerStyle3:hover .hover-img + .textBlockStyle3 {
+  transform: translateX(15px);
+}
+
+/* === Additional Section Text Styling (Section 4–9) === */
+.sectionStyle {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  color: #222;
+}
+
+.sectionStyle h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00695c;
+  font-weight: 700;
+}
+
+.sectionStyle p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 900px) {
+  .containerStyle,
+  .containerStyle3 {
+    flex-direction: column !important;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .imageStyle {
+    width: 90%;
+    max-width: 320px;
+    margin-bottom: 1.5rem;
+  }
+
+  .textBlockStyle,
+  .textBlockStyle3 {
+    transform: none !important;
+  }
+
+  /* Disable hover slide on mobile */
+  .hover-img:hover + .textBlockStyle,
+  .hover-img:hover + .textBlockStyle3 {
+    transform: none !important;
+  }
+
+}
+
+/* === Book sell === */
+/* Book Selling Section */
+.SellingSection {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.SectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #333;
+  animation: slideInFromTop 0.8s ease forwards;
+}
+
+.SellWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.Sellingbook {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.bookCard {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardEnter 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.bookCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.bookImage {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.bookName {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+.bookPrice {
+  font-size: 1rem;
+  font-weight: bold;
+   color: #7ffe7f;
+  margin-bottom: 0.3rem;
+}
+
+.authorName {
+  font-size: 0.95rem;
+  color: #948888;
+  margin-bottom: 0.3rem;
+}
+
+.stock {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: green;
+}
+
+
+.cartButton {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cartButton:hover {
+  background-color: #e85c50;
+}
+
+.seeMoreButton {
+  margin-top: 2.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seeMoreButton:hover {
+  background-color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardEnter {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+/* === Best  Book sell === */
+
+.bestSellingSection {
+  padding: 40px 20px;
+  background: #f0f8ff;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carouselWrapper {
+  width: 100%;
+  overflow-x: auto; /* Changed from hidden to allow horizontal scroll on small screens */
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* better scrolling on mobile */
+}
+
+.bestSellingCarousel {
+  display: flex;
+  gap: 20px;
+  width: max-content; /* more supported than fit-content */
+}
+
+.bookCard {
+  min-width: 180px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.bookCard:hover {
+  transform: scale(1.05);
+}
+
+.bookImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.bookName {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+.bookPrice {
+  font-weight: bold;
+  color: #2ecc71;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.cartButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cartButton:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* === Review == */
+.reviewSection {
+  padding: 40px 20px;
+  background-color: #3776f6;
+  overflow: hidden;
+  position: relative;
+}
+
+.reviewCarouselWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviewCarousel {
+  display: flex;
+  gap: 20px;
+  animation: scrollReviews 30s linear infinite;
+  width: max-content;
+}
+.reviewUserImg {
+  width: 40px;                /* smaller size */
+  height: 40px;
+  border-radius: 50%;         /* make it round */
+  object-fit: cover;
+  margin-bottom: 10px;
+  margin-right: 10px;         /* space between image and text */
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+
+.reviewCard {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(254, 254, 254);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+/* Text content */
+.reviewContent {
+  text-align: left;
+}
+
+.reviewText {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Animation */
+@keyframes scrollReviews {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.partnerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 40px;
+  background-color: #f5f8fa; /* light bg, change as you want */
+  gap: 40px;
+   height: 500px;
+}
+
+.partnerText {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.partnerText h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.partnerText p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.partnerLogo {
+  flex-shrink: 0;
+  max-width: 300px;
+}
+
+.partnerLogo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
