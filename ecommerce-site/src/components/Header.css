@@ -202,178 +202,6 @@ body {
   outline-width: 2px;
 }
 
-/* Modal Overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Make sure it’s above everything else */
-}
-
-.modal-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: var(--background-light);
-  padding: 36px 42px;
-  border-radius: var(--border-radius);
-  max-width: 440px;
-  width: 95%;
-  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.22);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  font-weight: 600;
-  font-size: 17px;
-  color: var(--primary-color);
-  transform: translateY(-30px);
-  transition: transform 0.35s ease;
-  user-select: none;
-}
-
-.modal-overlay.open .modal-content {
-  transform: translateY(0);
-}
-
-.modal-content h2 {
-  margin: 0;
-  font-weight: 800;
-  font-size: 32px;
-  letter-spacing: 0.03em;
-  user-select: text;
-}
-
-/* Floating label input wrapper */
-.input-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 14px 16px 14px 16px;
-  font-size: 16px;
-  border: 2px solid #bbb;
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  outline-offset: 2px;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.modal-content input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.35);
-}
-
-/* Floating label */
-.input-wrapper label {
-  position: absolute;
-  top: 14px;
-  left: 16px;
-  color: #999;
-  font-weight: 500;
-  font-size: 15px;
-  pointer-events: none;
-  user-select: none;
-  transition: all var(--transition-fast) ease;
-  background-color: var(--background-light);
-  padding: 0 6px;
-  border-radius: 6px;
-}
-
-/* Move label up when input has value or focus */
-.modal-content input:focus + label,
-.modal-content input:not(:placeholder-shown) + label {
-  top: -10px;
-  left: 12px;
-  font-size: 13px;
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
-/* Password toggle eye button */
-.password-toggle-btn {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  color: #666;
-  transition: color var(--transition-fast);
-  display: flex;
-  align-items: center;
-  user-select: none;
-}
-
-.password-toggle-btn:hover,
-.password-toggle-btn:focus-visible {
-  color: var(--primary-color);
-  outline-offset: 3px;
-  outline-color: var(--primary-color);
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* Buttons */
-.primary-btn,
-.cancel-btn {
-  padding: 14px 22px;
-  font-weight: 700;
-  font-size: 17px;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  user-select: none;
-  border: none;
-  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.primary-btn {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.5);
-}
-
-.primary-btn:hover,
-.primary-btn:focus-visible {
-  background-color: var(--primary-dark);
-  box-shadow: 0 9px 26px rgba(0, 86, 179, 0.7);
-  outline-offset: 4px;
-  outline-color: var(--primary-dark);
-  outline-style: solid;
-  outline-width: 3px;
-}
-
-.cancel-btn {
-  background-color: #e3e3e3;
-  color: #444;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
-}
-
-.cancel-btn:hover,
-.cancel-btn:focus-visible {
-  background-color: #d6d6d6;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  outline-offset: 4px;
-  outline-color: #999;
-  outline-style: solid;
-  outline-width: 2px;
-}
-
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -405,3 +233,153 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-dark);
 }
+
+.modal-content {
+  max-width: 380px;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  animation: modalFadeIn 0.35s ease forwards;
+  font-size: 16px;
+  color: #222;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.modal-content form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  border: 1.6px solid #bbb;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 0;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.modal-buttons button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.modal-buttons button[type="submit"]:hover {
+  background-color: #0b60cf;
+}
+
+.modal-buttons button[type="button"] {
+  background-color: #ddd;
+  color: #555;
+}
+
+.modal-buttons button[type="button"]:hover {
+  background-color: #bbb;
+}
+
+/* Social login buttons */
+.social-login {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-login button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.social-login button svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.facebook-btn {
+  background-color: #1877f2;
+  color: white;
+  box-shadow: 0 4px 12px rgb(24 119 242 / 0.45);
+}
+
+.facebook-btn:hover {
+  box-shadow: 0 6px 18px rgb(24 119 242 / 0.7);
+  background-color: #145dbf;
+}
+
+.google-btn {
+  background-color: #fff;
+  color: #555;
+  border: 1.6px solid #ddd;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.07);
+}
+
+.google-btn:hover {
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.15);
+  border-color: #bbb;
+}
+
+/* Small tweaks for cancel button spacing in modal-buttons */
+.modal-buttons button:first-child {
+  margin-left: 0;
+}
+.modal-buttons button:last-child {
+  margin-right: 0;
+}
+
+
