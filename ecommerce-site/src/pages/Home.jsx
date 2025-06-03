@@ -274,6 +274,7 @@ Great variety of books, fast delivery, very happyGreat variety of books, fast de
 fast delivery, very happyGreat variety of books, fast delivery, very happy fast delivery, very happy`,
 
       },
+      
       {
         id: 3,
         img: "/All_loggo/man3.jpg",
