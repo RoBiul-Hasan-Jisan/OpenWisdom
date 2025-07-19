@@ -53,11 +53,11 @@ const Header = () => {
         <nav className="desktop-nav">
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
-          <Link to="/cart">Cart</Link>
+      
           <Link to="/about">About Us</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/contact2">Book donation</Link>
-          <Link to="/contact3">Blog</Link>
+        
+          
 
           {!currentUser ? (
             <>
@@ -108,14 +108,7 @@ const Header = () => {
                   >
                     Dashboard
                   </Link>
-                  <Link
-                    to="/cart"
-                    className="dropdown-item"
-                    onClick={() => setIsUserMenuOpen(false)}
-                    style={{ display: "block", padding: "8px 12px", color: "#333", textDecoration: "none" }}
-                  >
-                    Cart
-                  </Link>
+
                   <Link
                     to="/profile"
                     className="dropdown-item"
@@ -158,21 +151,15 @@ const Header = () => {
             <Link to="/products" onClick={toggleEllipsisMenu}>
               Products
             </Link>
-            <Link to="/cart" onClick={toggleEllipsisMenu}>
-              Cart
-            </Link>
+            
             <Link to="/about" onClick={toggleEllipsisMenu}>
               About Us
             </Link>
             <Link to="/contact" onClick={toggleEllipsisMenu}>
               Contact
             </Link>
-            <Link to="/contact2" onClick={toggleEllipsisMenu}>
-              Book donation
-            </Link>
-            <Link to="/contact3" onClick={toggleEllipsisMenu}>
-              Blog
-            </Link>
+          
+           
             {!currentUser ? (
               <>
                 <button
